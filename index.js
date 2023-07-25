@@ -46,3 +46,29 @@ function findFrequentElement(array) {
 }
 const myArr = [1, 5, 5, 5, 4, 5, 5, 6, 2, 7, 2];
 const mostFrequentElement = findFrequentElement(myArr);
+
+// Task 5: Implement a simple JavaScript calculator. The calculator should take two numbers and an operator (+, -, *, /) as input and return the result of the operation.
+
+function calc(num1, num2, operator) {
+  switch (operator) {
+    case "+":
+      return num1 + num2;
+    case "-":
+      return num1 - num2;
+    case "*":
+      return num1 * num2;
+    case "/":
+      if (num2 === 0) {
+        return "Error: Please provide a valid number";
+      }
+      return num1 / num2;
+    default:
+      return "Error: Invalid operator.";
+  }
+}
+
+const num1 = 7;
+const num2 = 4;
+const operator = '*';
+
+const res = calc(num1, num2, operator);
