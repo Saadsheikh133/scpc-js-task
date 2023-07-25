@@ -63,7 +63,7 @@ function calc(num1, num2, operator) {
       }
       return num1 / num2;
     default:
-      return "Error: Invalid operator.";
+      return "Error: Invalid operator! Please provide a valid operator.";
   }
 }
 
@@ -112,3 +112,26 @@ function findSecondSmallestNumber(array) {
 }
 const array = [5, 8, 6, 5, 7, 10, 11, 44];
 const secondSmallestNumber = findSecondSmallestNumber(array);
+
+// Task 4: Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
+
+function findTwoNumbersIndex(sortedArr, target) {
+    let left = 0;
+    let right = sortedArr.length - 1;
+
+    while (left < right) {
+        const sum = sortedArr[left] + sortedArr[right];
+        if (sum === target) {
+            return [left, right];
+        } else if (sum < target) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    return null;
+};
+const sortedArr = [3, 4, 5, 6, 8, 9];
+const myTarget = 10;
+const sortedResult = findTwoNumbersIndex(sortedArr, myTarget)
+console.log(sortedResult)
