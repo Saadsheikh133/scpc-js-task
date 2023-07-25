@@ -69,26 +69,46 @@ function calc(num1, num2, operator) {
 
 const num1 = 7;
 const num2 = 4;
-const operator = '*';
+const operator = "*";
 
 const res = calc(num1, num2, operator);
 
 // Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
 
 function generatePassword(length) {
-    const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const lowercase = 'abcdefghijklmnopqrstuvwxyz';
-    const numbers = '0123456789';
-    const specialChars = "!@#$%^&*()-_+=[]<>,.?{}|:;/";
+  const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowercase = "abcdefghijklmnopqrstuvwxyz";
+  const numbers = "0123456789";
+  const specialChars = "!@#$%^&*()-_+=[]<>,.?{}|:;/";
 
-    const allChars = uppercase + lowercase + numbers + specialChars;
-    let password = '';
+  const allChars = uppercase + lowercase + numbers + specialChars;
+  let password = "";
 
-    for (let i = 0; i < length; i++) {
-        const randomPass = Math.floor(Math.random() * allChars.length)
-        password += allChars[randomPass];
-    }
-    return password;
+  for (let i = 0; i < length; i++) {
+    const randomPass = Math.floor(Math.random() * allChars.length);
+    password += allChars[randomPass];
+  }
+  return password;
 }
 const passLength = 12;
 const randomPass = generatePassword(passLength);
+
+// Task 8: Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number.
+
+function findSecondSmallestNumber(array) {
+  let min = Infinity;
+  let secondMin = Infinity;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < min) {
+      secondMin = min;
+      min = array[i];
+    } else if (array[i] < secondMin && array[i] !== min) {
+      secondMin = array[i];
+    }
+  }
+
+  return secondMin;
+}
+const array = [5, 8, 6, 5, 7, 10, 11, 44];
+const secondSmallestNumber = findSecondSmallestNumber(array);
