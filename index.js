@@ -23,8 +23,8 @@ function sumPositiveNumbers(array) {
   }
   return sum;
 }
-const myInput = [2, -5, 10, -3, 7];
-const result = sumPositiveNumbers(myInput);
+const arr = [2, -5, 10, -3, 7];
+const result = sumPositiveNumbers(arr);
 
 // Task 3: Write a JavaScript program to find the most frequent element in an array and return it.
 
@@ -72,3 +72,23 @@ const num2 = 4;
 const operator = '*';
 
 const res = calc(num1, num2, operator);
+
+// Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
+
+function generatePassword(length) {
+    const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const lowercase = 'abcdefghijklmnopqrstuvwxyz';
+    const numbers = '0123456789';
+    const specialChars = "!@#$%^&*()-_+=[]<>,.?{}|:;/";
+
+    const allChars = uppercase + lowercase + numbers + specialChars;
+    let password = '';
+
+    for (let i = 0; i < length; i++) {
+        const randomPass = Math.floor(Math.random() * allChars.length)
+        password += allChars[randomPass];
+    }
+    return password;
+}
+const passLength = 12;
+const randomPass = generatePassword(passLength);
